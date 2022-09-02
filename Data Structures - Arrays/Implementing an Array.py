@@ -4,6 +4,9 @@ class Array:
         self.length = 0
         self.data = {}
 
+    def __str__(self):
+        return str(self.__dict__)
+
     def get(self, index):
         return self.data[index]
 
@@ -27,8 +30,13 @@ class Array:
         self.length -= 1
         return deleteditem
 
+
 array = Array()
-
-array.push(1)
-
-print(array.data)
+array.push(3)
+array.push('hi')
+array.push(34)
+array.push(20)
+array.push('hey')
+array.push('welcome')
+array.delete(3)
+print(array)
