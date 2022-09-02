@@ -12,29 +12,31 @@
 
 #In interviews we must solve like this
 
-def mergeSortedArray(a,b):
-  if len(a) == 0 or len(b) == 0:
-    return a+b
-  
-  mylist=[]
-  i=0
-  j=0
+def mergeSortedArray(array1,array2):
+  if len(array1) == 0 or len(array2) == 0:
+    return array1+array2
 
-  while i<len(a) and j<len(b):
+  mergedArray=[]
+  indexArray1=0
+  indexArray2=0
 
-    if a[i] <= b[j]:
-      mylist.append(a[i])
-      i+=1
+  while indexArray1<len(array1) and indexArray2<len(array2):
 
-    elif b[j] < a[i]:
-      mylist.append(b[j])
-      j+=1
+    if array1[indexArray1] <= array2[indexArray2]:
+      mergedArray.append(array1[indexArray1])
+      indexArray1+=1
 
-  return mylist + a[i:] + b[j:]
+    elif array2[indexArray2] < array1[indexArray1]:
+      mergedArray.append(array2[indexArray2])
+      indexArray2+=1
 
-a = [1,3,4,6,20]
-b = [2,3,4,5,6,9,11,76]
-array = mergeSortedArray(a,b)
+  return mergedArray
+
+list1 = [1,3,4,6,20]
+list2 = [2,3,4,5,6,9,11,76]
+array = mergeSortedArray(list1,list2)
 print(array)
+
+
 
 
